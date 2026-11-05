@@ -1,0 +1,29 @@
+SVD BEST RANK-k – EXPERIMENT SUMMARY
+Input directory: C:\Users\24022\Downloads\SVD_BestRankK_Python_Project_centered_energy\svd_experiment_project\USC_SIPI_Dataset
+Expected image size: 512x512
+Energy thresholds: 99%, 98%, 97%, 96%, 95%, 94%, 93%, 92%, 91%, 90%
+Valid input images: 50
+Successful images: 50
+Failed images during SVD: 0
+
+Counts by group (valid input / successfully processed):
+  Group A: 20 / 20 (planned 20)
+  Group B: 20 / 20 (planned 20)
+  Group C: 10 / 10 (planned 10)
+
+Warnings:
+  None
+
+Important interpretation notes:
+  - SVD is applied to each channel after subtracting its mean intensity.
+  - The stored channel mean is added back after low-rank reconstruction.
+  - eta_target and eta_achieved refer to mean-centered energy (contrast variation), not total raw pixel energy.
+  - k is selected independently per channel at the requested mean-centered energy threshold.
+  - RGB MSE is averaged over all pixels and all three channels.
+  - PSNR uses MAX=255; SSIM uses data_range=255.
+  - Theoretical factor size assumes float32 coefficients and excludes file headers.
+  - Actual factor archive size is an uncompressed NPZ containing float32 factors.
+  - actual_ratio_vs_tiff compares the factor archive with the source TIFF file size.
+  - Reconstruction TIFF files are for visual assessment, not the compressed payload.
+  - validation/validation.csv contains only rejected files, with group and reason.
+  - Retained-energy thresholds are tested from 99% down to 90% in 1% steps.
